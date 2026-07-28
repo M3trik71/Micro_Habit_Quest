@@ -39,7 +39,21 @@ const INITIAL_STATE = {
         { id: 'b3', title: 'Aufsteiger', desc: 'Erreiche Level 2', icon: '⭐', unlocked: false },
         { id: 'b4', title: 'Code Meister', desc: 'Schließe 10 Quests ab', icon: '💻', unlocked: false },
         { id: 'b5', title: 'Routine-König', desc: 'Sammle 200 XP', icon: '💎', unlocked: false },
-        { id: 'b6', title: 'Unaufhaltsam', desc: 'Erreiche einen 7-Tage-Streak', icon: '👑', unlocked: false }
+        { id: 'b6', title: 'Unaufhaltsam', desc: 'Erreiche einen 7-Tage-Streak', icon: '👑', unlocked: false },
+        { id: 'b7', title: 'Durchstarter', desc: 'Schließe 5 Quests ab', icon: '⚡', unlocked: false},
+        { id: 'b8', title: 'Fleißiger Held', desc: 'Schließe 25 Quests ab', icon: '🛡️', unlocked: false},
+        { id: 'b9', title: 'Quest-Legende', desc: 'Schließe 100 Quests ab', icon: '🏆', unlocked: false},
+        { id: 'b10', title: 'XP-Sammler', desc: 'Sammle 500 XP', icon: '💰', unlocked: false},
+        { id: 'b11', title: 'XP-Legende', desc: 'Sammle 5000 XP', icon: '💰✨', unlocked: false},
+        { id: 'b12', title: 'Zwei Wochen stark', desc: 'Erreiche einen 14-Tage-Streak', icon: '🔥', unlocked: false},
+        { id: 'b13', title: 'Monatsmaschine', desc: 'Erreiche einen 30-Tage-Streak', icon: '📅', unlocked: false},
+        { id: 'b14', title: 'Gewohnheiten-Legende', desc: 'Erreiche einen 100-Tage-Streak', icon: '🌟', unlocked: false},
+        { id: 'b15', title: 'Frühaufsteher', desc: 'Erledige 10 Quests am Morgen', icon: '🌅', unlocked: false},
+        { id: 'b16', title: 'Nachtkämpfer', desc: 'Erledige 10 Quests am Abend', icon: '🌙', unlocked: false},
+        { id: 'b17', title: 'Perfekter Tag', desc: 'Schließe alle Tagesquests ab', icon: '✨', unlocked: false},
+        { id: 'b18', title: 'Perfektionsjäger', desc: 'Erreiche 7 perfekte Tage', icon: '🎯', unlocked: false},
+        { id: 'b19', title: 'Sport-Champion', desc: 'Schließe 25 Fitness-Quests ab', icon: '🏃', unlocked: false},
+        { id: 'b20', title: 'Wissenssucher', desc: 'Schließe 25 Lern-Quests ab', icon: '📚', unlocked: false},
     ],
     stats: {
         completedCount: 0
@@ -241,6 +255,62 @@ function checkBadgeTriggers() {
     // B6: Unaufhaltsam (7-Tage-Streak)
     if (state.user.bestStreak >= 7 && !state.badges[5].unlocked) {
         unlockBadge('b6');
+    }
+    // B7: Durchstarter (5 abgeschlossene Quests)
+    if (state.stats.completedCount >= 5 && !state.badges[6].unlocked) {
+        unlockBadge('b7');
+    }
+    // B8: Fleißiger Held (25 abgeschlossene Quests)
+    if (state.stats.completedCount >= 25 && !state.badges[7].unlocked) {
+        unlockBadge('b8');
+    }
+    // B9: Quest-Legende (100 abgeschlossene Quests)
+    if (state.stats.completedCount >= 100 && !state.badges[8].unlocked) {
+        unlockBadge('b9');
+    }
+    // B10: XP-Sammler (500 XP)
+    if (state.user.totalXP >= 500 && !state.badges[9].unlocked) {
+        unlockBadge('b10');
+    }
+    // B11: XP-Legende (5000 XP)
+    if (state.user.totalXP >= 5000 && !state.badges[10].unlocked) {
+        unlockBadge('b11');
+    }
+    // B12: Zwei Wochen stark (14-Tage-Streak)
+    if (state.user.bestStreak >= 14 && !state.badges[11].unlocked) {
+        unlockBadge('b12');
+    }
+    // B13: Monatsmaschine (30-Tage-Streak)
+    if (state.user.bestStreak >= 30 && !state.badges[12].unlocked) {
+        unlockBadge('b13');
+    }
+    // B14: Gewohnheiten-Legende (100-Tage-Streak)
+    if (state.user.bestStreak >= 100 && !state.badges[13].unlocked) {
+        unlockBadge('b14');
+    }
+    // B15: Frühaufsteher (10 Morgen-Quests)
+    if (state.stats.morningQuests >= 10 && !state.badges[14].unlocked) {
+        unlockBadge('b15');
+    }
+    // B16: Nachtkämpfer (10 Abend-Quests)
+    if (state.stats.eveningQuests >= 10 && !state.badges[15].unlocked) {
+        unlockBadge('b16');
+    }
+    // B17: Perfekter Tag (alle Tagesquests erledigt)
+    if (state.stats.perfectDays >= 1 && !state.badges[16].unlocked) {
+        unlockBadge('b17');
+    }
+    // B18: Perfektionsjäger (7 perfekte Tage)
+    if (state.stats.perfectDays >= 7 && !state.badges[17].unlocked) {
+        unlockBadge('b18');
+    }
+    // B19: Sport-Champion (25 Fitness-Quests)
+    if (state.stats.sportQuests >= 25 && !state.badges[18].unlocked) {
+        unlockBadge('b19');
+    }
+    // B20: Wissenssucher (25 Lern-Quests)
+    if (state.stats.learningQuests >= 25 && !state.badges[19].unlocked) {
+        unlockBadge('b20');
     }
 }
 
