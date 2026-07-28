@@ -1,5 +1,5 @@
 
-// Micro-Habit Quest — State & Core Logic
+// Micro-Habit Quest — Hauptlogik und Ablauf
 
 const INITIAL_STATE = {
     user: {
@@ -30,6 +30,7 @@ const INITIAL_STATE = {
             streak: 5
         }
     ],
+    // alle Badges sind hier aufgelistet
     badges: [
         { id: 'b1', title: 'Erster Schritt', desc: 'Schließe deine erste Quest ab', icon: '🚀', unlocked: false },
         { id: 'b2', title: 'Gewohnheitstier', desc: 'Erreiche einen 3-Tage-Streak', icon: '🔥', unlocked: false },
@@ -45,7 +46,7 @@ const INITIAL_STATE = {
 
 let state = JSON.parse(localStorage.getItem('micro_habit_quest_state')) || INITIAL_STATE;
 
-// Save State to LocalStorage
+// Sicherung zum State to LocalStorage
 function saveState() {
     localStorage.setItem('micro_habit_quest_state', JSON.stringify(state));
     renderApp();
@@ -189,7 +190,7 @@ function checkBadgeTriggers() {
     if (state.user.level >= 2 && !state.badges[2].unlocked) {
         unlockBadge('b3');
     }
-    // B4: Code Meister (10 abgeschlossene Quests) — NEU!
+    // B4: Code Meister (10 abgeschlossene Quests)
     if (state.stats.completedCount >= 10 && state.badges[3] && !state.badges[3].unlocked) {
         unlockBadge('b4');
     }
