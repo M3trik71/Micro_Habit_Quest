@@ -41,7 +41,7 @@ body {
     min-height: 100vh;
 }
 
-/* SIDEBAR */
+/* Sidebar */
 .sidebar {
     width: 280px;
     background-color: var(--bg-sidebar);
@@ -79,7 +79,7 @@ body {
     font-weight: 600;
 }
 
-/* PROFILE CARD */
+/* User Profil */
 .profile-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -159,7 +159,7 @@ body {
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* NAVIGATION */
+/* Navigations Menu */
 .nav-menu {
     display: flex;
     flex-direction: column;
@@ -213,7 +213,7 @@ body {
     color: var(--accent-red);
 }
 
-/* MAIN CONTENT */
+/* Main Content */
 .main-content {
     flex: 1;
     padding: 32px;
@@ -268,7 +268,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* TOOLBAR */
+/* Toolbar */
 .content-toolbar {
     display: flex;
     justify-content: space-between;
@@ -330,7 +330,7 @@ body {
     color: var(--text-primary);
 }
 
-/* HABIT CARDS GRID */
+/* Habits Card Grid */
 .habits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -458,7 +458,7 @@ body {
     color: var(--accent-red);
 }
 
-/* BADGES TAB */
+/* Badges Tab */
 .badges-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -499,7 +499,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* STATS TAB */
+/* Statistiken Tab */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -521,7 +521,7 @@ body {
     margin: 12px 0;
 }
 
-/* MODAL */
+/* Modal */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -610,7 +610,7 @@ body {
     margin-top: 24px;
 }
 
-/* TABS CONTROL */
+/* Tabs Control */
 .tab-content {
     display: none;
 }
@@ -619,7 +619,7 @@ body {
     display: block;
 }
 
-/* TOAST NOTIFICATION */
+/* Toast Hinweise */
 .toast-container {
     position: fixed;
     bottom: 24px;
@@ -643,6 +643,7 @@ body {
     animation: slideIn 0.3s ease;
 }
 
+/* Keyframe Animation zum SlideIn */
 @keyframes slideIn {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
