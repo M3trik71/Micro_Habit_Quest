@@ -2,6 +2,7 @@
 // Micro-Habit Quest — Hauptlogik und Ablauf
 
 const INITIAL_STATE = {
+     // Standard User Daten beim neuladen oder reseten
     user: {
         name: "Held des Alltags",
         level: 1,
@@ -11,6 +12,7 @@ const INITIAL_STATE = {
         bestStreak: 0
     },
     habits: [
+         // Standard Habits beim neuladen oder reseten
         {
             id: "1",
             title: "30 Min. Programmieren",

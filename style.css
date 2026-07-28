@@ -451,7 +451,7 @@ body {
     color: var(--text-muted);
     cursor: pointer;
     font-size: 1.1rem;
-    padding: 4px;
+    padding: 4px 12px;
 }
 
 .delete-habit-btn:hover {
