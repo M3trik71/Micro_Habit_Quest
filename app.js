@@ -153,7 +153,10 @@ function toggleHabit(id) {
 
         // Add XP
         addXP(habit.xp);
+        showToast(`Herzlichen Glückwunsch!`);
         showToast(`✨ Quest erledigt! +${habit.xp} XP erhalten.`);
+        launchConfetti()
+
     } else {
         // Undo Completion
         habit.completedToday = false;
@@ -164,6 +167,41 @@ function toggleHabit(id) {
 
     checkBadgeTriggers();
     saveState();
+}
+
+function launchConfetti() {
+
+    const container = document.createElement("div");
+    container.className = "confetti-container";
+    document.body.appendChild(container);
+
+    const colors = [
+        "#ff4d4d",
+        "#ffd93d",
+        "#6bcb77",
+        "#4d96ff",
+        "#c77dff",
+        "#ff8fab",
+        "#00c2a8"
+    ];
+
+    for (let i = 0; i < 80; i++) {
+
+        const piece = document.createElement("span");
+        piece.className = "confetti";
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDuration = (2 + Math.random() * 2) + "s";
+        piece.style.animationDelay = (Math.random() * 0.5) + "s";
+        piece.style.transform = `rotate(${Math.random()*360}deg)`;
+
+        container.appendChild(piece);
+    }
+
+    setTimeout(() => {
+        container.remove();
+    }, 4500);
 }
 
 function addXP(amount) {
