@@ -10,5 +10,5 @@ ist eine gamifizierte Webanwendung zur Verfolgung täglicher Gewohnheiten. Diese
 2. Downloade die "micro_habit_quest.html" Datei herunter und lege sie in diesen Ordner.
 3. Downloade die "style.css" Datei herunter und lege sie in diesen Ordner.
 4. Downloade die "app.js" Datei herunter und lege sie in diesen Ordner.
-5. Öffne die Datei "micro_habit_quest.html" mit einen Browser (z.B. Google Chrome).
+5. Öffne die Datei "micro_habit_quest.html" mit einen Browser deiner Wahl (z.B. Google Chrome).
 
